@@ -17,3 +17,7 @@ variable "vm_subnet_name" {
 variable "vm_public_ip" {
     default = "vm_public_ip"
 }
+
+variable "acr_name" {
+  default = "acr"
+}

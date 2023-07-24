@@ -72,9 +72,7 @@ resource "null_resource" "ansible_installation" {
     type     = "ssh"
     host     = azurerm_linux_virtual_machine.vm.public_ip_address
     user     = azurerm_linux_virtual_machine.vm.admin_username
-    agent    = true
     private_key = file("~/.ssh/azurekey")
-    timeout  = "1m"
   }
 
   depends_on = [azurerm_linux_virtual_machine.vm]
