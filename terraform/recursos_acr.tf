@@ -28,9 +28,17 @@ resource "azurerm_network_security_rule" "nsr_acr_to_vm" {
 }
 
 
-/* resource "azurerm_role_assignment" "acr_to_aks" {
-  principal_id                     = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
+resource "azurerm_role_assignment" "ara_acr_to_aks" {
+  principal_id                     = azurerm_kubernetes_cluster.my_aks.kubelet_identity[0].object_id
   role_definition_name             = "AcrPull"
-  scope                            = azurerm_container_registry.rg.id
+  scope                            = azurerm_container_registry.my_acr.id
   skip_service_principal_aad_check = true
-} */
+}
+
+/* resource "docker_image" "mongo" {
+  name = "library/mongo:latest"
+}
+
+resource "docker_image" "nginx" {
+  name = "rbnicodev/nginx-app:latest"
+} */ //No he podido añadir las imágenes al ACR, por lo que dejo el código comentado.

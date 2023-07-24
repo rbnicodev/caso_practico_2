@@ -29,3 +29,7 @@ variable "nsg_name" {
 variable "nsr_name" {
   default = "my_nsr"
 }
+
+variable "aks_name" {
+  default = "my_aks"
+}
