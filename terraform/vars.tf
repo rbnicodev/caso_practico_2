@@ -19,5 +19,13 @@ variable "vm_public_ip" {
 }
 
 variable "acr_name" {
-  default = "acr"
+  default = "acrcasopractico2DevOps"
+}
+
+variable "nsg_name" {
+  default = "my_nsg"
+}
+
+variable "nsr_name" {
+  default = "my_nsr"
 }

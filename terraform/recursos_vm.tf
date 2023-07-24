@@ -58,6 +58,11 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "10"
     version   = "latest"
   }
+
+  identity {
+    type = "SystemAssigned"
+  }
+
 }
 
 resource "null_resource" "ansible_installation" {
